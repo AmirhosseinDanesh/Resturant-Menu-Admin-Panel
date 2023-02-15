@@ -1,0 +1,42 @@
+.sidebar {
+  position: fixed;
+  width: 110px;
+  height: 100vh;
+  background-color: var(--dark);
+  font-size: 0.5rem !important;
+}
+.sb-profile {
+  border-bottom: 1px solid #fff;
+}
+.sb-li {
+  padding: 0rem 0.5rem 1rem 0.5rem;
+  margin: 1rem 0rem;
+}
+.sb-li.active {
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+}
+.sb-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* phones  */
+@media (max-width: 480px) {
+}
+@media (min-width: 769px) {
+  .sidebar {
+    width: 300px;
+    font-size: 1rem !important;
+  }
+  .sb-li {
+    padding: 1.5rem 1.5rem 1rem 2rem;
+    margin: 1rem 0rem;
+  }
+  .fs-6 {
+    font-size: 1rem !important;
+  }
+}

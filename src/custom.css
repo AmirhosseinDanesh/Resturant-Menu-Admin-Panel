@@ -1,0 +1,37 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: "IRANSans";
+  src: url(./Fonts/IRANSans.ttf);
+}
+@font-face {
+  font-family: "IRANSansBold";
+  src: url(./Fonts/IRANSansBold.ttf);
+}
+@font-face {
+  font-family: "IRANSansLight";
+  src: url(./Fonts/IRANSansLight.ttf);
+}
+@font-face {
+  font-family: "IRANSansMedium";
+  src: url(./Fonts/IRANSansMedium.ttf);
+}
+@font-face {
+  font-family: "IRANSansUltraLight";
+  src: url(./Fonts/IRANSansUltraLight.ttf);
+}
+:root {
+  --dark: #101010;
+  --white: #dfdddd;
+}
+
+*,
+html,
+body {
+  font-family: IRANSans;
+}
+
+html {
+  direction: rtl;
+  background-color: var(--white);
+}
