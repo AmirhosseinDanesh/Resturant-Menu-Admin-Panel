@@ -17,7 +17,7 @@ export default function Sidebar() {
     const [open2, setOpen2] = useState(true);
     return (
         <div className="sidebar text-white d-flex flex-column justify-content-between ">
-            <div className='mt-1'>
+            <div className='mt-1 '>
                 <div className="sb-profile d-flex align-items-center p-md-3 justify-content-center flex-column text-center">
                     <div className="sb-profile_img mb-2">
                         <img src="./Images/profile.png" alt=""/>
@@ -31,7 +31,7 @@ export default function Sidebar() {
                         </span>
                     </div>
                 </div>
-                <div className="sb-list py-md-3">
+                <div className="sb-list py-md-3 py-2">
                     <div className='m-md-2 py-2 mb-md-4 sb-list-item'>
                         <div className={`sb-title-list d-flex align-items-center justify-content-between ms-1 mb-md-2 ${open ? "active" : ""
                             } `}

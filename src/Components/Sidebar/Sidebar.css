@@ -1,7 +1,7 @@
 .sidebar {
-  position: fixed;
-  width: 130px;
-  height: 100vh;
+  /* position: relative; */
+  width: 35%;
+  /* height: 100vh; */
   background-color: var(--dark);
   font-size: 0.6rem !important;
   /* overflow-x: auto; */
@@ -43,7 +43,7 @@
 }
 @media (min-width: 769px) {
   .sidebar {
-    width: 300px;
+    width: 30%;
     font-size: 1rem !important;
   }
   .sb-li {
