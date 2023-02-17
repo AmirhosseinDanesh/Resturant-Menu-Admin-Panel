@@ -29,11 +29,13 @@
 html,
 body {
   font-family: IRANSans;
-  
+
 }
 
 html {
   direction: rtl;
-  background-color: var(--white);
   
+}
+body{
+  background-color: var(--dark);
 }

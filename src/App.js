@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="d-flex flex-row justify-content-between">
       <Sidebar />
-      <div className="main">
+      <div className="main d-flex flex-column m-1 p-3 p-md-4 bg-white ">
         <Header />
       </div>
 
