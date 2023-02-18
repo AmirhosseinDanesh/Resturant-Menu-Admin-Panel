@@ -1,0 +1,26 @@
+.header {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid white;
+  border-radius: 10px;
+}
+
+.hd-input {
+  border-radius: 10px;
+  font-size: 0.7rem;
+  padding: 0.3rem;
+}
+.hd-icons {
+  font-size: 1.5rem;
+}
+@media (min-width: 769px) {
+  .hd-icons {
+    font-size: 2rem;
+  }
+  .hd-setting-icon {
+    width: 33px;
+    height: 33px;
+  }
+  .hd-input {
+    font-size: 1rem !important;
+  }
+}
