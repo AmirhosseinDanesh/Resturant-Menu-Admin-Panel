@@ -4,7 +4,8 @@ import { AiOutlineBell } from "react-icons/ai"
 import { FiSettings } from "react-icons/fi"
 import { GiExitDoor } from "react-icons/gi"
 import { MdOutlineDarkMode } from "react-icons/md"
-import { BsSun } from "react-icons/bs"
+import { HiOutlineSun } from "react-icons/hi"
+
 
 export default function Header() {
     const [theme, setTheme] = useState(true)
@@ -27,7 +28,7 @@ export default function Header() {
                         <button className="btn">
                             {
                                 theme ? (
-                                    <BsSun className='hd-icons' onClick={() => {
+                                    <HiOutlineSun className='hd-icons' onClick={() => {
                                         document.querySelector("body").classList.toggle("dark")
                                         setTheme(false)
                                     }} />

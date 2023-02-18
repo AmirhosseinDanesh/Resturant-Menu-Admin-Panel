@@ -44,25 +44,25 @@ html {
 
 
 body.dark {
-  background-color: #000000 !important;
-  color: #000000;
+  background-color: var(--dark) !important;
+  color: var(--dark);
 }
 body.dark .sidebar {
-  background-color: #000000;
-  color: rgb(255, 255, 255) !important;
+  background-color: var(--dark);
+  color: var(--white) !important;
 }
 
 body.dark .main {
-  background-color: #0b0b0b !important;
-  color: rgb(255, 255, 255) !important;
+  background-color: var(--dark) !important;
+  color: var(--white) !important;
 }
 body.dark .btn {
-  color: rgb(255, 255, 255) !important;
+  color: var(--white) !important;
 }
 body.dark .sb-li{
-  color: white !important;
+  color: var(--white) !important;
 }
 body.dark .sb-li.active{
-  color: rgb(0, 0, 0) !important;
-  background-color: rgb(255, 255, 255);
+  color:var(--dark)!important;
+  background-color: var(--white);
 }
