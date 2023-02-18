@@ -3,10 +3,10 @@ import "./Sidebar.css"
 import { MdSpaceDashboard, MdOutlineHomeMax } from "react-icons/md"
 import { CgDatabase } from "react-icons/cg"
 import { RxCodesandboxLogo } from "react-icons/rx"
-import { AiOutlineShoppingCart } from "react-icons/ai"
+import { AiOutlineShoppingCart  } from "react-icons/ai"
 import { FaUsers, FaComment, FaDollarSign } from "react-icons/fa"
 import { BiChevronLeft } from "react-icons/bi"
-import { FiGithub } from "react-icons/fi"
+
 
 import Collapse from 'react-bootstrap/Collapse';
 
@@ -16,7 +16,7 @@ export default function Sidebar() {
     const [open, setOpen] = useState(true);
     const [open2, setOpen2] = useState(true);
     return (
-        <div className="sidebar text-white d-flex flex-column justify-content-between ">
+        <div className="sidebar d-flex flex-column justify-content-between  ">
             <div className='mt-1 '>
                 <div className="sb-profile d-flex align-items-center p-md-3 justify-content-center flex-column text-center">
                     <div className="sb-profile_img mb-2">
@@ -94,7 +94,7 @@ export default function Sidebar() {
             </div>
             {/* <div className="sb-git text-center d-flex justify-content-center">
                 <div className='d-flex justify-content-around w-25'>
-                    <a className='text-decoration-none text-white ' href='https://github.com/AmirhosseinDanesh'>
+                    <a className='text-decoration-none ' href='https://github.com/AmirhosseinDanesh'>
                     <FiGithub style={{marginLeft:"3px"}}/>
                         GitHub
                     </a>

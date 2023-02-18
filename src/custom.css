@@ -24,18 +24,46 @@
   --dark: #101010;
   --white: #dfdddd;
 }
+[data="dark"] {
+  --dark: #dfdddd;
+  --white: #101010;
+}
 
 *,
 html,
 body {
   font-family: IRANSans;
-
 }
 
 html {
   direction: rtl;
-  
 }
-body{
-  background-color: var(--dark);
+body {
+  /* background-color: var(--dark); */
+  color: ;
+}
+
+/* body.dark {
+  filter: invert(100%);
+}
+
+body.dark img {
+  filter: invert(100%);
+} */
+
+body.dark {
+  background-color: #000000 !important;
+  color: #000000;
+}
+body.dark .sidebar {
+  background-color: #000000;
+  color: rgb(255, 255, 255) !important;
+}
+
+body.dark .main {
+  background-color: #0b0b0b !important;
+  color: rgb(255, 255, 255) !important;
+}
+body.dark .btn {
+  color: rgb(255, 255, 255) !important;
 }

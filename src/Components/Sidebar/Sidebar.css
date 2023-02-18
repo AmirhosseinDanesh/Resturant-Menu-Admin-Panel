@@ -1,10 +1,8 @@
 .sidebar {
-  /* position: relative; */
   width: 35%;
-  /* height: 100vh; */
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
   font-size: 0.6rem !important;
-  /* overflow-x: auto; */
+  border-left: 1px solid;
 }
 .sb-profile_img img{
   width: 30px;
