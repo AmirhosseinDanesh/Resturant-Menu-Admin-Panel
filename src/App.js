@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className="d-flex flex-row justify-content-between">
       <Sidebar />
-      <div className="main d-flex flex-column m-1 p-3 p-md-4 bg-white ">
+      <div className="main d-flex flex-column m-1 p-3 p-md-4 ">
         <Header />
         {router}
       </div>

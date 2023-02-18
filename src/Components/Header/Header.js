@@ -8,8 +8,7 @@ import { HiOutlineSun } from "react-icons/hi"
 
 
 export default function Header() {
-    const [theme, setTheme] = useState(true)
-    console.log(theme)
+    const [theme, setTheme] = useState(false)
     return (
         <>
             <div className='header d-flex justify-content-between align-items-md-center flex-column flex-md-row'>
@@ -29,13 +28,13 @@ export default function Header() {
                             {
                                 theme ? (
                                     <HiOutlineSun className='hd-icons' onClick={() => {
-                                        document.querySelector("body").classList.toggle("dark")
+                                        document.querySelector("body").setAttribute("data", "dark")
                                         setTheme(false)
                                     }} />
 
                                 ) : (
                                     <MdOutlineDarkMode className='hd-icons' onClick={() => {
-                                        document.querySelector("body").classList.toggle("dark")
+                                        document.querySelector("body").setAttribute("data", "")
                                         setTheme(true)
                                     }} />
                                 )

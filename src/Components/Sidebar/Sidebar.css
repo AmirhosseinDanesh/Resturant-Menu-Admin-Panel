@@ -2,7 +2,8 @@
   width: 35%;
   font-size: 0.65rem !important;
   border-left: 1px solid;
-  border-radius: 15px;
+  background-color: #121212;
+  color: white !important;
 }
 .sb-profile_img img{
   width: 30px;
@@ -15,20 +16,21 @@
 }
 
 .sb-profile {
-  border-bottom: 1px solid var(--white);
-  border-radius: 20px;
+  border-bottom: 1px solid white;
+
 }
 .sb-li {
   padding: 0.5rem;
   margin: 1rem 0rem;
-  color: var(--dark) !important;
+  color: white !important;
 
 }
 .sb-li.active {
-  color: var(--white) !important;
-  background-color: var(--dark);
+  color:#121212 !important;
+  background-color: white;
   border-radius: 30px;
 }
+
 .sb-icon {
   display: flex;
   justify-content: space-between;
@@ -43,6 +45,9 @@
 }
 .active .sb-menu-icon-left {
   transform: rotateZ(-90deg);
+}
+.sb-git div a{
+  color: var(--dark);
 }
 
 /* phones  */
