@@ -48,7 +48,10 @@ export default function Header() {
                     </div>
                 </div>
                 <div className='mt-3 mt-md-0 col-md-6'>
-                    <input className='hd-input w-100' type="text" placeholder='جستجو' />
+                    <div className="searchbox">
+                        <input className='hd-input w-100' type="text" placeholder='نام کاربر ، شماره سفارش و ...' />
+                        <button className='hd-input-btn'>جستجو</button>
+                    </div>
                 </div>
                 <button className='btn d-none d-md-block'>
                     <GiExitDoor className='hd-icons ' />

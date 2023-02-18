@@ -38,18 +38,9 @@ body {
 html {
   direction: rtl;
 }
-body {
-  /* background-color: var(--dark); */
-  color: ;
-}
 
-/* body.dark {
-  filter: invert(100%);
-}
 
-body.dark img {
-  filter: invert(100%);
-} */
+
 
 
 body.dark {
