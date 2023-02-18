@@ -25,8 +25,8 @@
   --white: #dfdddd;
 }
 [data="dark"] {
-  --dark: #dfdddd;
-  --white: #101010;
+  --dark: #ffffff;
+  --white: #000000;
 }
 
 *,
@@ -58,4 +58,11 @@ body.dark .main {
 }
 body.dark .btn {
   color: rgb(255, 255, 255) !important;
+}
+body.dark .sb-li{
+  color: white !important;
+}
+body.dark .sb-li.active{
+  color: rgb(0, 0, 0) !important;
+  background-color: rgb(255, 255, 255);
 }

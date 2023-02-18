@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Collapse from 'react-bootstrap/Collapse';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import { MdSpaceDashboard, MdOutlineHomeMax } from "react-icons/md"
 import { CgDatabase } from "react-icons/cg"
@@ -46,10 +46,10 @@ export default function Sidebar() {
                             <BiChevronLeft className='sb-menu-icon-left' />
                         </div>
                         <Collapse in={open}>
-                            <Link to="/" className='sb-li sb-icon text-decoration-none text-white' id="example-collapse-text">
+                            <NavLink to="/" className='sb-li sb-icon text-decoration-none text-dark' id="example-collapse-text">
                                     صفحه اصلی
                                     <MdOutlineHomeMax className='icons' style={{ fontSize: "0.9rem" }} />
-                            </Link>
+                            </NavLink>
                         </Collapse>
                     </div>
                     <div className='m-md-2 py-2 mb-md-4 sb-list-item'>
@@ -66,26 +66,26 @@ export default function Sidebar() {
                         </div>
                         <Collapse in={open2}>
                             <ul className='' id="example-collapse-text ">
-                                <Link to="/products" className='sb-li sb-icon text-decoration-none text-white'>
+                                <NavLink to="/products" className='sb-li sb-icon text-decoration-none text-dark'>
                                     محصولات
                                     <RxCodesandboxLogo className='icons' style={{ fontSize: "0.9rem" }} />
-                                </Link>
-                                <Link to="/orders" className='sb-li sb-icon text-decoration-none text-white'>
+                                </NavLink>
+                                <NavLink to="/orders" className='sb-li sb-icon text-decoration-none text-dark'>
                                     سفارشات
                                     <AiOutlineShoppingCart className='icons' style={{ fontSize: "0.9rem" }} />
-                                </Link>
-                                <Link to="/users" className='sb-li sb-icon text-decoration-none text-white'>
+                                </NavLink>
+                                <NavLink to="/users" className='sb-li sb-icon text-decoration-none text-dark'>
                                     کاربران
                                     <FaUsers className='icons' style={{ fontSize: "0.9rem" }} />
-                                </Link>
-                                <Link to="/comments" className='sb-li sb-icon text-decoration-none text-white'>
+                                </NavLink>
+                                <NavLink to="/comments" className='sb-li sb-icon text-decoration-none text-dark'>
                                     کامنت ها
                                     <FaComment className='icons' style={{ fontSize: "0.9rem" }} />
-                                </Link>
-                                <Link to="/offs" className='sb-li sb-icon text-decoration-none text-white'>
+                                </NavLink>
+                                <NavLink to="/offs" className='sb-li sb-icon text-decoration-none text-dark'>
                                     تخفیف ها
                                     <FaDollarSign className='icons' style={{ fontSize: "0.9rem" }} />
-                                </Link>
+                                </NavLink>
                             </ul>
                         </Collapse>
 
