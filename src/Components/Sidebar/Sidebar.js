@@ -66,7 +66,7 @@ export default function Sidebar() {
                             <BiChevronLeft className='sb-menu-icon-left' />
                         </div>
                         <Collapse in={open2}>
-                            <ul className='' id="example-collapse-text ">
+                            <ul className='px-1' id="example-collapse-text ">
                                 <NavLink to="/products" className='sb-li sb-icon text-decoration-none'>
                                     محصولات
                                     <RxCodesandboxLogo className='icons' style={{ fontSize: "0.9rem" }} />

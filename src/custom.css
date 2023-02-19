@@ -1,4 +1,4 @@
-@import "./reset.css";
+
 
 @font-face {
   font-family: "IRANSans";
@@ -33,7 +33,7 @@
 *,
 html,
 body {
-  font-family: IRANSans;
+  font-family: IRANSans !important;
 }
 
 html {
