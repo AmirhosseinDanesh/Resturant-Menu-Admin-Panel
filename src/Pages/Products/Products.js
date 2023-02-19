@@ -8,13 +8,14 @@ import "./Products.css"
 export default function Products() {
   return (
     <>
+
       <div className='mt-3'>
         <AddNewProducts />
       </div>
       <div className="mt-3">
+        {/* <ErrorBox msg="هیچ محصولی یافت نشد!" /> */}
         <ProductsTable />
       </div>
-      {/* <ErrorBox msg="هیچ محصولی یافت نشد!" /> */}
     </>
   )
 }
