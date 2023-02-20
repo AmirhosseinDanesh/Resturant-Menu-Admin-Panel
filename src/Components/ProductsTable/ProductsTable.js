@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import "./ProductsTable.css"
 import DeleteModal from "../../Components/DeleteModal/DeleteModal"
+import DetailModals from '../DetailModals/DetailModals'
 
 
 export default function ProductsTable() {
-    const [isShowModal, setIsShowModal] = useState(false)
+    const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
+    const [isShowDDetailModal, setIsShowDetailModal] = useState(false)
+    
+
     const deleteModalCancel = () => {
-        setIsShowModal(false)
+        setIsShowDeleteModal(false)
     }
+    
     const deleteModalSubmit = () => {
-        setIsShowModal(false)
+        setIsShowDeleteModal(false)
+    }
+
+    const closeDetailModal = ()=>{
+        setIsShowDetailModal(false)
     }
 
     return (
@@ -42,8 +51,8 @@ export default function ProductsTable() {
                                 </td>
                                 <td>
                                     <div className='d-flex justify-content-center'>
-                                        <button className="btn text-white ms-2 btn-sm btn-success">جزئیات</button>
-                                        <button className="btn text-white ms-2 btn-sm btn-danger" onClick={() => setIsShowModal(true)}>حذف</button>
+                                        <button className="btn text-white ms-2 btn-sm btn-success" onClick={()=>{setIsShowDetailModal(true)}}>جزئیات</button>
+                                        <button className="btn text-white ms-2 btn-sm btn-danger" onClick={() => setIsShowDeleteModal(true)}>حذف</button>
                                         <button className="btn text-white ms-2 btn-sm btn-primary">ویرایش</button>
                                     </div>
                                 </td>
@@ -54,7 +63,10 @@ export default function ProductsTable() {
             </div>
 
             {
-                isShowModal && <DeleteModal cancel={deleteModalCancel} submit={deleteModalSubmit}/>
+                isShowDeleteModal && <DeleteModal cancel={deleteModalCancel} submit={deleteModalSubmit}/>
+            }
+            {
+                isShowDDetailModal && <DetailModals onHide={closeDetailModal} />
             }
         </>
 

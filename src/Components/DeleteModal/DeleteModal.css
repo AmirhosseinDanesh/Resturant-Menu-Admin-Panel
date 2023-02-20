@@ -1,6 +1,6 @@
 .modal {
   display: block !important;
-  padding-top: 12rem;
+  /* padding-top: 12rem; */
   background-color: #0000007e;
 }
 .modal-header h5 {
@@ -16,6 +16,6 @@
 @media (min-width: 769px) {
   .modal-header h5,
   .modal-footer .btn{
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
 }
