@@ -13,7 +13,7 @@ export default function DeleteModal({ cancel, submit }) {
         window.addEventListener("keydown", escape)
 
         const clickOnSpace = (event) => {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 cancel()
             }
         }

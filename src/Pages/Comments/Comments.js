@@ -6,7 +6,7 @@ export default function Comments() {
     <>
         <div className="">
           <ErrorBox msg="هیچ کامنتی یافت نشد!" />
-          
+        
         </div>
     </>
   );

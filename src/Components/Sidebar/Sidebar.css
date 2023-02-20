@@ -4,6 +4,7 @@
   border-left: 1px solid;
   background-color: #121212;
   color: white !important;
+  height: 100vh;
 }
 .sb-profile_img img{
   width: 30px;

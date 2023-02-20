@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import "./DetailModals.css"
 
 export default function DetailModals({ onHide }) {
     useEffect(() => {
@@ -11,7 +12,7 @@ export default function DetailModals({ onHide }) {
         window.addEventListener("keydown", escape)
         
         const clickOnSpace = (event)=>{
-            if (event.target == modal) {
+            if (event.target === modal) {
                 onHide()
             }
         }
@@ -35,7 +36,7 @@ export default function DetailModals({ onHide }) {
                         </button>
                     </div>
                     <div className='modal-body'>
-                        <table className="table  text-center">
+                        <table className="table text-center">
                             <thead>
                                 <tr>
                                     <th>اسم</th>
