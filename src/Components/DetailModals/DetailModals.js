@@ -2,19 +2,30 @@ import React, { useEffect } from 'react'
 
 export default function DetailModals({ onHide }) {
     useEffect(() => {
+        var modal = document.querySelector('.modal');
         const escape = (e) => {
             if (e.keyCode === 27) {
                 onHide()
             }
         }
         window.addEventListener("keydown", escape)
-        return () => {
-            window.removeEventListener("keydown", escape)
+        
+        const clickOnSpace = (event)=>{
+            if (event.target == modal) {
+                onHide()
+            }
+        }
+        window.addEventListener("click", clickOnSpace)
 
+        return () => {
+
+            window.removeEventListener("keydown", escape)
+            window.removeEventListener("click", clickOnSpace)
+            
         }
     })
     return (
-        <div className="modal show fade" tabIndex="-1" role="dialog">
+        <div className="modal show fade" tabIndex="-1" role="dialog" >
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                     <div className="modal-header">

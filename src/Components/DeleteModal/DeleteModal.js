@@ -4,18 +4,29 @@ import ReactDOM from 'react-dom'
 import "./DeleteModal.css"
 export default function DeleteModal({ cancel, submit }) {
     useEffect(() => {
+        var modal = document.querySelector('.modal');
         const escape = (e) => {
             if (e.keyCode === 27) {
                 cancel()
             }
         }
         window.addEventListener("keydown", escape)
+
+        const clickOnSpace = (event) => {
+            if (event.target == modal) {
+                cancel()
+            }
+        }
+        window.addEventListener("click", clickOnSpace)
+
         return () => {
+
             window.removeEventListener("keydown", escape)
+            window.removeEventListener("click", clickOnSpace)
 
         }
     })
-    
+
     return ReactDOM.createPortal(
         <div className="modal show fade" tabIndex="-1" role="dialog">
             <div className="modal-dialog modal-dialog-centered" role="document">
