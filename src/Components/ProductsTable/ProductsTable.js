@@ -4,11 +4,11 @@ import DeleteModal from "../../Components/DeleteModal/DeleteModal"
 import DetailModals from '../DetailModals/DetailModals'
 import EditModal from '../../Components/EditModal/EditModal';
 import ErrorBox from '../../Components/ErrorBox/ErrorBox'
-export default function ProductsTable() {
+export default function ProductsTable({getAllProducts,allProducts}) {
     const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
     const [isShowDetailModal, setIsShowDetailModal] = useState(false)
     const [isShowEditModal, setIsShowEditModal] = useState(false)
-    const [allProducts, setAllProducts] = useState([])
+
     const [productID, setProductID] = useState(null)
 
     const [productDetail, setProductDetail] = useState({})
@@ -20,15 +20,6 @@ export default function ProductsTable() {
     const [productsNewPopularity, setProductsNewPopularity] = useState("")
     const [productsNewSale, setProductsNewSale] = useState("")
     const [productsNewColors, setProductsNewColors] = useState("")
-    useEffect(() => {
-        getAllProducts()
-    }, [])
-
-    const getAllProducts = () => {
-        fetch("http://localhost:8000/api/products/")
-            .then(res => res.json())
-            .then(products => setAllProducts(products))
-    }
 
     const deleteModalCancel = () => {
         setIsShowDeleteModal(false)
@@ -55,7 +46,7 @@ export default function ProductsTable() {
     const submitEditModal = () => {
         
 
-        const productNewDate = {
+        const productNewData = {
             title: productsNewTitle,
             price: productsNewPrice,
             count: productsNewCount,
@@ -69,7 +60,7 @@ export default function ProductsTable() {
             headers: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify(productNewDate)
+            body: JSON.stringify(productNewData)
         }).then(res => res.json())
             .then(result => {
                 setIsShowEditModal(false)
@@ -182,7 +173,7 @@ export default function ProductsTable() {
                                     {productDetail.colors}
                                 </td>
                                 <td>
-                                    {productDetail.popularity}
+                                    {productDetail.popularity}%
                                 </td>
                                 <td>
                                     {productDetail.sale}
