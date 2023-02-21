@@ -9,19 +9,31 @@ export default function ProductsTable() {
     const [isShowDetailModal, setIsShowDetailModal] = useState(false)
     const [isShowEditModal, setIsShowEditModal] = useState(false)
     const [allProducts, setAllProducts] = useState([])
-
+    const [productID, setProductID] = useState(null)
+    const [productDetail, setProductDetail] = useState({})
     useEffect(() => {
+        getAllProducts()
+    }, [])
+
+    const getAllProducts = () => {
         fetch("http://localhost:8000/api/products/")
             .then(res => res.json())
             .then(products => setAllProducts(products))
-    }, [])
+    }
 
     const deleteModalCancel = () => {
         setIsShowDeleteModal(false)
     }
 
     const deleteModalSubmit = () => {
-        setIsShowDeleteModal(false)
+        console.log(productID)
+        fetch(`http://localhost:8000/api/products/${productID}`, { method: 'DELETE' })
+            .then(res => res.json())
+            .then(data => {
+                setIsShowDeleteModal(false)
+                getAllProducts()
+            })
+
     }
 
     const closeDetailModal = () => {
@@ -69,8 +81,15 @@ export default function ProductsTable() {
                                             </td>
                                             <td>
                                                 <div className='d-flex justify-content-center'>
-                                                    <button className="btn text-white ms-2 btn-sm btn-success" onClick={() => setIsShowDetailModal(true)}>جزئیات</button>
-                                                    <button className="btn text-white ms-2 btn-sm btn-danger" onClick={() => setIsShowDeleteModal(true)}>حذف</button>
+                                                    <button className="btn text-white ms-2 btn-sm btn-success" onClick={() => {
+                                                        setIsShowDetailModal(true)
+                                                        setProductDetail(pr)
+                                                    }}
+                                                    >جزئیات</button>
+                                                    <button className="btn text-white ms-2 btn-sm btn-danger" onClick={() => {
+                                                        setIsShowDeleteModal(true)
+                                                        setProductID(pr.id)
+                                                    }}>حذف</button>
                                                     <button className="btn text-white ms-2 btn-sm btn-primary" onClick={() => setIsShowEditModal(true)}>ویرایش</button>
                                                 </div>
                                             </td>
@@ -91,7 +110,45 @@ export default function ProductsTable() {
             }
 
             {
-                isShowDetailModal && <DetailModals onHide={closeDetailModal} />
+                isShowDetailModal && <DetailModals onHide={closeDetailModal} >
+                    <table className="table text-center">
+                        <thead>
+                            <tr>
+                                <th>اسم</th>
+                                <th>قیمت</th>
+                                <th>موجودی</th>
+                                <th>رنگ</th>
+                                <th>محبوبیت</th>
+                                <th>میزان فروش</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style={{ verticalAlign: "middle" }}>
+                                <td>
+                                    {productDetail.title}
+                                </td>
+                                <td>
+                                    {productDetail.price}
+                                </td>
+                                <td>
+                                    {productDetail.count}
+                                </td>
+                                <td>
+                                    {productDetail.colors}
+                                </td>
+                                <td>
+                                    {productDetail.popularity}
+                                </td>
+                                <td>
+                                    {productDetail.sale}
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </DetailModals>
+
             }
 
             {
