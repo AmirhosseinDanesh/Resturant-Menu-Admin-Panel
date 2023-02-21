@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./ProductsTable.css"
 import DeleteModal from "../../Components/DeleteModal/DeleteModal"
 import DetailModals from '../DetailModals/DetailModals'
@@ -96,7 +96,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                                 {pr.title}
                                             </td>
                                             <td>
-                                                {pr.price}
+                                                {pr.price.toLocaleString()}
                                             </td>
                                             <td>
                                                 {pr.count}
@@ -129,7 +129,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                                 </div>
                                             </td>
                                         </tr>
-                                    ))
+                                    )).reverse()
                                 }
 
                             </tbody>
@@ -164,7 +164,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                     {productDetail.title}
                                 </td>
                                 <td>
-                                    {productDetail.price}
+                                    {productDetail.price.toLocaleString()}
                                 </td>
                                 <td>
                                     {productDetail.count}
@@ -196,7 +196,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                             }} />
                         </div>
                         <div className="form-group col-md-5 col-6 p-1">
-                            <input type="text" className="form-control" placeholder="قیمت محصول" value={productsNewPrice} onChange={(event) => {
+                            <input type="text" className="form-control" placeholder="قیمت محصول" value={productsNewPrice.toLocaleString()} onChange={(event) => {
                                 setProductsNewPrice(event.target.value)
                             }} />
                         </div>
