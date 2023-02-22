@@ -16,7 +16,7 @@ export default function App() {
       <Sidebar />
       <div className="main d-flex flex-column m-1 p-3 p-md-4 ">
         <Header />
-        {router}
+      {router}
       </div>
 
     </div>

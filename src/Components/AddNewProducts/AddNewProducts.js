@@ -28,7 +28,7 @@ export default function AddNewProducts({ getAllProducts }) {
         setNewProductsColors("")
     }
     const addNewProduct = () => {
-        fetch(`http://localhost:8000/api/products/`, {
+        fetch(`https://mdresturant.iran.liara.run/api/products/`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

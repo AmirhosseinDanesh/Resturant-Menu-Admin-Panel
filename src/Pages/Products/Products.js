@@ -10,7 +10,7 @@ export default function Products() {
   }, [])
 
   const getAllProducts = () => {
-    fetch("http://localhost:8000/api/products/")
+    fetch("https://mdresturant.iran.liara.run/api/products/")
       .then(res => res.json())
       .then(products => setAllProducts(products))
   }

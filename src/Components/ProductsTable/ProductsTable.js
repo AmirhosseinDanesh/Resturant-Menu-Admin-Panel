@@ -27,7 +27,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
 
     const deleteModalSubmit = () => {
 
-        fetch(`http://localhost:8000/api/products/${productID}`, { method: 'DELETE' })
+        fetch(`https://mdresturant.iran.liara.run/api/products/${productID}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(data => {
                 setIsShowDeleteModal(false)
@@ -55,7 +55,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
             sale: productsNewSale,
             colors: productsNewColors
         }
-        fetch(`http://localhost:8000/api/products/${productID}`, {
+        fetch(`https://mdresturant.iran.liara.run/api/products/${productID}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'
