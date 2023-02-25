@@ -24,7 +24,7 @@ export default function DetailModals({ onHide ,children }) {
             window.removeEventListener("click", clickOnSpace)
             
         }
-    })
+    } , [])
     return (
         <div className="modal show fade" tabIndex="-1" role="dialog" >
                         <div className="modal-dialog modal-dialog-centered" role="document">

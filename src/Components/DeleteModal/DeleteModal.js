@@ -25,7 +25,7 @@ export default function DeleteModal({ cancel, submit }) {
             window.removeEventListener("click", clickOnSpace)
 
         }
-    })
+    }, [])
 
     return ReactDOM.createPortal(
         <div className="modal show fade" tabIndex="-1" role="dialog">
