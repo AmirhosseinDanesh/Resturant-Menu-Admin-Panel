@@ -41,9 +41,9 @@ export default function EditModal({ onHide, submit , children }) {
                             {children}
         
                             <div className="form-group  p-1 d-flex justify-content-center">
-                                <a className='btn pr-submit-btn text-white bg-primary' onClick={() => submit()}>
+                                <button className='btn pr-submit-btn text-white bg-primary' onClick={(event) => submit(event.preventDefault())}>
                                     ثبت
-                                </a>
+                                </button>
                             </div>
                         </form>
                     </div>

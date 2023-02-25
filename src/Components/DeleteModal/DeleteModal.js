@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 import "./DeleteModal.css"
-export default function DeleteModal({ cancel, submit }) {
+export default function DeleteModal({ cancel, submit , title }) {
     useEffect(() => {
         var modal = document.querySelector('.modal');
         const escape = (e) => {
@@ -32,7 +32,7 @@ export default function DeleteModal({ cancel, submit }) {
             <div className="modal-dialog modal-dialog-centered" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title fw-bold">آیا از حذف اطمینان دارید؟</h5>
+                        <h5 className="modal-title fw-bold">{title}</h5>
                         <button type="button" className="close btn" aria-label="Close">
                             <span className='close-modal' aria-hidden="true" onClick={() => cancel()}>&times;</span>
                         </button>

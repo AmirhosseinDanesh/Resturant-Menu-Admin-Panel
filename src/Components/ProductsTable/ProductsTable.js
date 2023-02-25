@@ -47,7 +47,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
         setIsShowEditModal(false)
     }
     const submitEditModal = () => {
-        
+
         const productNewData = {
             title: productsNewTitle,
             price: productsNewPrice,
@@ -130,8 +130,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                                         setProductsNewPopularity(pr.popularity)
                                                         setProductsNewSale(pr.sale)
                                                         setProductsNewColors(pr.colors)
-                                                        setProductsNewdescript(pr.descript)
-                                                        
+                                                        setProductsNewdescript(pr.descript)      
                                                     }}
                                                     >ویرایش</button>
                                                 </div>
@@ -149,7 +148,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
             </div>
 
             {
-                isShowDeleteModal && <DeleteModal cancel={deleteModalCancel} submit={deleteModalSubmit} />
+                isShowDeleteModal && <DeleteModal cancel={deleteModalCancel} submit={deleteModalSubmit} title={"آیا از حذف محصول اطمینان دارید؟"}/>
             }
 
             {

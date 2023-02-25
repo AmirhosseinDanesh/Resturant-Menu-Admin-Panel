@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Data from '../../Data/Data';
 
 export default function AddNewProducts({ getAllProducts }) {
     const [newProductsTitle, setNewProductsTitle] = useState("")
@@ -32,7 +33,7 @@ export default function AddNewProducts({ getAllProducts }) {
     }
     const addNewProduct = (event) => {
         event.preventDefault()
-        fetch(`https://mdresturant.iran.liara.run/api/products/`, {
+        fetch(`${Data.url}/products/`, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
