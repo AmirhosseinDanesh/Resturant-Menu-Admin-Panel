@@ -37,7 +37,7 @@ export default function EditModal({ onHide, submit , children }) {
                     </div>
 
                     <div className="modal-footer">
-                        <form>
+                        <form className='w-100'>
                             {children}
         
                             <div className="form-group  p-1 d-flex justify-content-center">

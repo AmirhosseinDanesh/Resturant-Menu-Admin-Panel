@@ -30,7 +30,8 @@ export default function AddNewProducts({ getAllProducts }) {
         setNewProductsColors("")
         setNewProductsdescript("")
     }
-    const addNewProduct = () => {
+    const addNewProduct = (event) => {
+        event.preventDefault()
         fetch(`https://mdresturant.iran.liara.run/api/products/`, {
             method: 'POST',
             headers: {
@@ -55,8 +56,8 @@ export default function AddNewProducts({ getAllProducts }) {
                 </div>
             </div>
             <div className="form-row d-flex justify-content-around mt-2 mt-md-3">
-                <div className="form-group col-md-5 col-6 p-1">
-                    <input type="text" className="form-control" placeholder="موجودی محصول" value={newProductsCount} onChange={(e) => { setNewProductsCount(e.target.value) }} />
+                <div className="form-group col-md-5 col-6 p-1 d-flex justify-content-end">
+                    <input type="text" className="form-control" placeholder="توضیحات محصول" value={newProductsdescript} onChange={(e) => { setNewProductsdescript(e.target.value) }} />
                 </div>
                 <div className="form-group col-md-5 col-6 p-1">
                     <input type="text" className="form-control" placeholder="تصویر محصول" value={newProductsImg} onChange={(e) => { setNewProductsImg(e.target.value) }} />
@@ -64,7 +65,7 @@ export default function AddNewProducts({ getAllProducts }) {
             </div>
             <div className="form-row d-flex justify-content-around mt-2 mt-md-3">
                 <div className="form-group col-md-5 col-6 p-1">
-                    <input type="text" className="form-control" placeholder="محبوبیت محصول" value={newProductsPopularity} onChange={(e) => { setNewProductsPopularity(e.target.value) }} />
+                    <input type="text" className="form-control" placeholder="موجودی محصول" value={newProductsCount} onChange={(e) => { setNewProductsCount(e.target.value) }} />
                 </div>
                 <div className="form-group col-md-5 col-6 p-1">
                     <input type="text" className="form-control" placeholder="میزان فروش" value={newProductsSale} onChange={(e) => { setNewProductsSale(e.target.value) }} />
@@ -74,14 +75,14 @@ export default function AddNewProducts({ getAllProducts }) {
                 <div className="form-group col-md-5 col-6 p-1">
                     <input type="text" className="form-control" placeholder="رنگ محصول" value={newProductsColors} onChange={(e) => { setNewProductsColors(e.target.value) }} />
                 </div>
-                <div className="form-group col-md-5 col-6 p-1 d-flex justify-content-end">
-                    <input type="text" className="form-control" placeholder="توضیحات محصول" value={newProductsdescript} onChange={(e) => { setNewProductsdescript(e.target.value) }} />
+                <div className="form-group col-md-5 col-6 p-1">
+                    <input type="text" className="form-control" placeholder="محبوبیت محصول" value={newProductsPopularity} onChange={(e) => { setNewProductsPopularity(e.target.value) }} />
                 </div>
             </div>
             <div className="form-group d-flex justify-content-center">
-                <a className='btn pr-submit-btn text-white bg-primary' onClick={addNewProduct}>
+                <button  className='btn pr-submit-btn text-white bg-primary' onClick={addNewProduct}>
                     ثبت
-                </a>
+                </button>
             </div>
 
         </form>
