@@ -2,7 +2,7 @@ import React ,{useState , useEffect} from 'react'
 import AddNewProducts from "../../Components/AddNewProducts/AddNewProducts"
 import ProductsTable from '../../Components/ProductsTable/ProductsTable'
 import "./Products.css"
-
+import Data from "../../Components/Data/Data"
 export default function Products() {
   const [allProducts, setAllProducts] = useState([])
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function Products() {
   }, [])
 
   const getAllProducts = () => {
-    fetch("https://mdresturant.iran.liara.run/api/products/")
+    fetch(`${Data.url}products/`)
       .then(res => res.json())
       .then(products => setAllProducts(products))
   }

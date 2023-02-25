@@ -4,7 +4,9 @@ import DeleteModal from "../../Components/DeleteModal/DeleteModal"
 import DetailModals from '../DetailModals/DetailModals'
 import EditModal from '../../Components/EditModal/EditModal';
 import ErrorBox from '../../Components/ErrorBox/ErrorBox'
+import Data from '../Data/Data';
 export default function ProductsTable({getAllProducts,allProducts}) {
+
     const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
     const [isShowDetailModal, setIsShowDetailModal] = useState(false)
     const [isShowEditModal, setIsShowEditModal] = useState(false)
@@ -27,7 +29,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
 
     const deleteModalSubmit = () => {
 
-        fetch(`https://mdresturant.iran.liara.run/api/products/${productID}`, { method: 'DELETE' })
+        fetch(`${Data.url}products/${productID}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(data => {
                 setIsShowDeleteModal(false)
@@ -55,7 +57,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
             sale: productsNewSale,
             colors: productsNewColors
         }
-        fetch(`https://mdresturant.iran.liara.run/api/products/${productID}`, {
+        fetch(`${Data.url}products/${productID}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'
