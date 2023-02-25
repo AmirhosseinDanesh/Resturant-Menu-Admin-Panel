@@ -30,7 +30,7 @@ export default function DetailModals({ onHide ,children }) {
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title fw-bold ">جزئیات محصول</h5>
+                                    <h5 className="modal-title fw-bold ">جزئیات</h5>
                                     <button type="button" className="close btn" onClick={() => onHide()}>
                                         <span className='close-modal' aria-hidden="true">&times;</span>
                                     </button>

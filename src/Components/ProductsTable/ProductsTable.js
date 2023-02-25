@@ -4,7 +4,7 @@ import DeleteModal from "../../Components/DeleteModal/DeleteModal"
 import DetailModals from '../DetailModals/DetailModals'
 import EditModal from '../../Components/EditModal/EditModal';
 import ErrorBox from '../../Components/ErrorBox/ErrorBox'
-import Data from '../Data/Data';
+import Data from '../../Data/Data';
 export default function ProductsTable({getAllProducts,allProducts}) {
 
     const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
@@ -22,6 +22,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
     const [productsNewPopularity, setProductsNewPopularity] = useState("")
     const [productsNewSale, setProductsNewSale] = useState("")
     const [productsNewColors, setProductsNewColors] = useState("")
+    const [productsNewdescript, setProductsNewdescript] = useState("")
 
     const deleteModalCancel = () => {
         setIsShowDeleteModal(false)
@@ -29,7 +30,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
 
     const deleteModalSubmit = () => {
 
-        fetch(`${Data.url}products/${productID}`, { method: 'DELETE' })
+        fetch(`${Data.url}/products/${productID}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(data => {
                 setIsShowDeleteModal(false)
@@ -47,7 +48,6 @@ export default function ProductsTable({getAllProducts,allProducts}) {
     }
     const submitEditModal = () => {
         
-
         const productNewData = {
             title: productsNewTitle,
             price: productsNewPrice,
@@ -55,9 +55,10 @@ export default function ProductsTable({getAllProducts,allProducts}) {
             img: productsNewImg,
             popularity: productsNewPopularity,
             sale: productsNewSale,
-            colors: productsNewColors
+            colors: productsNewColors,
+            descript: productsNewdescript
         }
-        fetch(`${Data.url}products/${productID}`, {
+        fetch(`${Data.url}/products/${productID}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'
@@ -84,6 +85,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                     <th className='fw-bold'>اسم</th>
                                     <th className='fw-bold'>قیمت</th>
                                     <th className='fw-bold'>موجودی</th>
+                                    <th className='fw-bold'>توضیحات</th>
                                     <th className='fw-bold'>عملیات</th>
                                 </tr>
                             </thead>
@@ -104,8 +106,11 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                                 {pr.count}
                                             </td>
                                             <td>
+                                                {pr.descript}
+                                            </td>
+                                            <td>
                                                 <div className='d-flex justify-content-center'>
-                                                    <button className="btn text-white ms-2 btn-sm btn-success" onClick={() => {
+                                                    <button className="btn text-white ms-2 btn-sm btn-info" onClick={() => {
                                                         setIsShowDetailModal(true)
                                                         setProductDetail(pr)
                                                     }}
@@ -125,6 +130,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                                                         setProductsNewPopularity(pr.popularity)
                                                         setProductsNewSale(pr.sale)
                                                         setProductsNewColors(pr.colors)
+                                                        setProductsNewdescript(pr.descript)
                                                         
                                                     }}
                                                     >ویرایش</button>
@@ -225,6 +231,11 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                         <div className="form-group col-md-5 col-6 p-1">
                             <input type="text" className="form-control" placeholder="رنگ محصول" value={productsNewColors} onChange={(event) => {
                                 setProductsNewColors(event.target.value)
+                            }} />
+                        </div>
+                        <div className="form-group col-md-5 col-6 p-1">
+                            <input type="text" className="form-control" placeholder="توضیحات محصول" value={productsNewdescript} onChange={(event) => {
+                                setProductsNewdescript(event.target.value)
                             }} />
                         </div>
                         <div className="form-group col-md-5 col-6 p-1">

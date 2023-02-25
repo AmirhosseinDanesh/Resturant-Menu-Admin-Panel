@@ -8,6 +8,7 @@ export default function AddNewProducts({ getAllProducts }) {
     const [newProductsPopularity, setNewProductsPopularity] = useState("")
     const [newProductsSale, setNewProductsSale] = useState("")
     const [newProductsColors, setNewProductsColors] = useState("")
+    const [newProductsdescript, setNewProductsdescript] = useState("")
 
     const newProductData = {
         title: newProductsTitle,
@@ -17,6 +18,7 @@ export default function AddNewProducts({ getAllProducts }) {
         popularity: newProductsPopularity,
         sale: newProductsSale,
         colors: newProductsColors,
+        descript: newProductsdescript,
     }
     const emptyInput = () => {
         setNewProductsTitle("")
@@ -26,6 +28,7 @@ export default function AddNewProducts({ getAllProducts }) {
         setNewProductsPopularity("")
         setNewProductsSale("")
         setNewProductsColors("")
+        setNewProductsdescript("")
     }
     const addNewProduct = () => {
         fetch(`https://mdresturant.iran.liara.run/api/products/`, {
@@ -72,11 +75,15 @@ export default function AddNewProducts({ getAllProducts }) {
                     <input type="text" className="form-control" placeholder="رنگ محصول" value={newProductsColors} onChange={(e) => { setNewProductsColors(e.target.value) }} />
                 </div>
                 <div className="form-group col-md-5 col-6 p-1 d-flex justify-content-end">
-                    <a className='btn pr-submit-btn text-white bg-primary' onClick={addNewProduct}>
-                        ثبت
-                    </a>
+                    <input type="text" className="form-control" placeholder="توضیحات محصول" value={newProductsdescript} onChange={(e) => { setNewProductsdescript(e.target.value) }} />
                 </div>
             </div>
+            <div className="form-group d-flex justify-content-center">
+                <a className='btn pr-submit-btn text-white bg-primary' onClick={addNewProduct}>
+                    ثبت
+                </a>
+            </div>
+
         </form>
     )
 }
