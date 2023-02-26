@@ -71,10 +71,6 @@ export default function Sidebar() {
                                     محصولات
                                     <RxCodesandboxLogo className='icons' style={{ fontSize: "0.9rem" }} />
                                 </NavLink>
-                                <NavLink  to="/orders" className='sb-li sb-icon text-decoration-none'>
-                                    سفارشات
-                                    <AiOutlineShoppingCart className='icons' style={{ fontSize: "0.9rem" }} />
-                                </NavLink>
                                 <NavLink  to="/users" className='sb-li sb-icon text-decoration-none'>
                                     کاربران
                                     <FaUsers className='icons' style={{ fontSize: "0.9rem" }} />
@@ -82,6 +78,10 @@ export default function Sidebar() {
                                 <NavLink  to="/comments" className='sb-li sb-icon text-decoration-none'>
                                     کامنت ها
                                     <FaComment className='icons' style={{ fontSize: "0.9rem" }} />
+                                </NavLink>
+                                <NavLink  to="/orders" className='sb-li sb-icon text-decoration-none'>
+                                    سفارشات
+                                    <AiOutlineShoppingCart className='icons' style={{ fontSize: "0.9rem" }} />
                                 </NavLink>
                                 <NavLink  to="/offs" className='sb-li sb-icon text-decoration-none'>
                                     تخفیف ها
