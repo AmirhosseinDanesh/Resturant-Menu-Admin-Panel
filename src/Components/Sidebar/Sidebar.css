@@ -1,7 +1,6 @@
 .sidebar {
   width: 35%;
   font-size: 0.65rem !important;
-  border-left: 1px solid;
   background-color: #121212;
   color: white !important;
 }
@@ -15,10 +14,6 @@
   margin-bottom: 0.5rem !important;
 }
 
-.sb-profile {
-  border-bottom: 1px solid white;
-
-}
 .sb-li {
   padding: 0.5rem;
   margin: 1rem 0rem;

@@ -30,8 +30,7 @@ export default function Comments() {
       .then(data => setComments(data))
   }
 
-  const deleteComment = (event) => {
-    event.preventDefault()
+  const deleteComment = () => {
     fetch(`${Data.url}/comments/${commentID}`, { method: "DELETE" })
       .then(res => res.json())
       .then(data => getAllComment())
