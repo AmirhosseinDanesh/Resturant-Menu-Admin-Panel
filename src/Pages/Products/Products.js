@@ -19,10 +19,10 @@ export default function Products() {
   return (
     <>
 
-      <div className='mt-3'>
+      <div className='mt-3 section-bg'>
         <AddNewProducts getAllProducts={getAllProducts}/>
       </div>
-      <div className="mt-3">
+      <div className="mt-3 section-bg">
         <ProductsTable allProducts={allProducts} getAllProducts={getAllProducts}/>
       </div>
     </>

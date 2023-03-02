@@ -75,8 +75,7 @@ export default function ProductsTable({getAllProducts,allProducts}) {
 
     return (
         <>
-            <div className='mt-3 '>
-                <div className="table-responsive">
+            <div className="table-responsive">
                     {
                         allProducts.length ? (<table className="table  text-center">
                             <thead>
@@ -145,7 +144,6 @@ export default function ProductsTable({getAllProducts,allProducts}) {
                         )
                     }
                 </div>
-            </div>
 
             {
                 isShowDeleteModal && <DeleteModal cancel={deleteModalCancel} submit={deleteModalSubmit} title={"آیا از حذف محصول اطمینان دارید؟"}/>
